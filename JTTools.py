@@ -1,5 +1,6 @@
 import time, os, subprocess,sys
 sys.path.insert(0,"\\")
+line = 4
 import JTToolsMethods,JTToolsOptions
 JTToolsMethods.logo()
 
@@ -7,32 +8,22 @@ local =time.asctime( time.localtime(time.time()) )
 with open("JT Tools Log File.txt", "a") as f: f.write(local)
 with open ("JT Tools Log File.txt","a") as f: f.write("    JT Tools Initialized:version 7.0.0.28.06.16.121937\n")
 print ("This script is copyrighted by Jensen Taylor 2014 - 2016(C). JT Tools script version 7.0.0 Beta Re-Written for Python 2.7 instead of 3.4 due to a bug in python 3.4.1.\n")
-import sys
-sys.path.insert(0,"\\")
-import JTToolsOptions
 from JTToolsOptions import Options
-
 print ("Please wait two seconds...")
 time.sleep (2)
 vanish = int(0)
 try:
+ line = 17
  repeat = int(input("Please enter 1 to confirm you are not a robot."))
  if repeat != 1:
-  
   JTToolsMethods.exitnow()
-
-  vanishabc = JTToolsOptions.Options.vanishprint
-
  while repeat == int(1):
-
   if JTToolsOptions.Options.useusername == True:
        usernameenter = input("Please enter your username.")
        while usernameenter != JTToolsOptions.Options.username1 and  usernameenter != JTToolsOptions.Options.username2 or usernameenter == False:
            print ("Sorry: you inputted an invalid username.")
            usernameenter = input("Please enter your username.")
-
   if JTToolsOptions.Options.pin == True:
-
     vanish = 0
     vanishprint = JTToolsOptions.Options.vanishprint 
     codeenter = int(input("Please enter the current NPIN."))
@@ -53,9 +44,6 @@ try:
              pass
   elif JTToolsOptions.Options.pin == False:
           pass
-  
-      
-  
   local =time.asctime( time.localtime(time.time()) )
   with open("JT Tools Log File.txt", "a") as f: f.write(local)
   with open ("JT Tools Log File.txt","a") as f: f.write("    JT Tools :Correct PIN entered.\n")
@@ -91,7 +79,7 @@ try:
                   os.system ("shutdown -r -f")
 
                   os.system ("shutdown -l -f")
-           if modewanted == 2:
+           elif modewanted == 2:
 
             local =time.asctime( time.localtime(time.time()) )
             with open("JT Tools Log File.txt", "a") as f: f.write(local)
@@ -101,13 +89,11 @@ try:
              waittime =int(input("How long, in minutes, do you wish to wait?"))
              time.sleep (waittime*60)
              local =time.asctime( time.localtime(time.time()) )
-
              with open("JT Tools Log File.txt", "a") as f: f.write(local)
              with open ("JT Tools Log File.txt","a") as f: f.write("    JT Tools :Performing Logoff Operation.\n")
              os.system ("shutdown -l -f")
-           if modewanted == 3:
+           elif modewanted == 3:
             local =time.asctime( time.localtime(time.time()) )
-
             with open("JT Tools Log File.txt", "a") as f: f.write(local)
             with open ("JT Tools Log File.txt","a") as f: f.write("    JT Tools :Hibernate(mode 1.3) entered.\n")
             hibernate = int(input("Please enter 1 or 0 to confirm hibernate."))
@@ -118,7 +104,7 @@ try:
              with open("JT Tools Log File.txt", "a") as f: f.write(local)
              with open ("JT Tools Log File.txt","a") as f: f.write("    JT Tools :Performing Hibernate Operation.\n")
              os.system ("shutdown -h -f")
-           if modewanted == 4:
+           elif modewanted == 4:
                subprocess.call("JTTools.py", shell = True)
 except():
     pass
