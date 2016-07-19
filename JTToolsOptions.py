@@ -6,4 +6,4 @@ class Options:
  vanishprint = 500
  pin = True
  useusername = True
- menu = False
+ menu = True
