@@ -106,5 +106,6 @@ try:
              os.system ("shutdown -h -f")
            elif modewanted == 4:
                subprocess.call("JTTools.py", shell = True)
-except():
-    pass
+except(NameError,ValueError,SyntaxError,ImportError,WindowsError):
+    print ("Dammit! Something went wrong!")
+    time.sleep(5)
