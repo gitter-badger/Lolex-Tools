@@ -19,8 +19,8 @@ try:
   JTToolsMethods.exitnow()
  while repeat == int(1):
   if JTToolsOptions.Options.useusername == True:
-       usernameenter = input("Please enter your username.")
-       while usernameenter != JTToolsOptions.Options.username1 and  usernameenter != JTToolsOptions.Options.username2 or usernameenter == False:
+       usernameenter = input("Please enter your username in brackets and speech marks.")
+       while str(usernameenter) != JTToolsOptions.Options.username1 and  str(usernameenter) != JTToolsOptions.Options.username2 or str(usernameenter) == False:
            print ("Sorry: you inputted an invalid username.")
            usernameenter = input("Please enter your username.")
   if JTToolsOptions.Options.pin == True:
@@ -47,7 +47,7 @@ try:
   local =time.asctime( time.localtime(time.time()) )
   with open("JT Tools Log File.txt", "a") as f: f.write(local)
   with open ("JT Tools Log File.txt","a") as f: f.write("    JT Tools :Correct PIN entered.\n")
-  if JTToolsOptions.menu == True:
+  if JTToolsOptions.Options.menu == True:
    print ("Here is a list of mode groups available:")
    print ("1 = Power Menu Related Options:Restart, Logoff (2 methods available), Hibernate, Shutdown (2 methods available), Lock Workstation")
    print ("2 = Call Programs: CMD, Documents, Python Shell, Task Manager, Auto-Clicker, Notepad, Restart This Script")
