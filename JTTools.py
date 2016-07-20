@@ -5,7 +5,7 @@ JTToolsMethods.logo()
 local =time.asctime( time.localtime(time.time()) )
 with open("JT Tools Log File.txt", "a") as f: f.write(local)
 with open ("JT Tools Log File.txt","a") as f: f.write("    JT Tools Initialized:version 7.0.0.1232.20.7.16\n")
-print ("This script is copyrighted by Jensen Taylor 2014 - 2016(C). JT Tools script version 7.0.0 Beta")
+print ("JT Tools script version 7.0.0 Beta")
 from JTToolsOptions import Options
 print ("Please wait two seconds...")
 time.sleep (2)
