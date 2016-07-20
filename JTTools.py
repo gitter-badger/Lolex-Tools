@@ -113,6 +113,7 @@ try:
       print ("1 = Call CMD")
       print ("2 = Call Documents")
       print ("3 = Call Task Manager")
+      print ("4 = Call Python Shell")
       modewanted = int(input("Please enter the number of the mode you wish to enter."))
       if modewanted == 1:
           subprocess.call("cmd.exe")
@@ -120,6 +121,8 @@ try:
           subprocess.call("explorer.exe")
       if modewanted == 3:
           subprocess.call("taskmgr.exe")
+      if modewanted == 4:
+          subprocess.call("python.exe")
   elif groupmode == 3:
       print("Here is a list of modes available:")
       print ("1 = Colour Flicker")
