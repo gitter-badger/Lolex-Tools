@@ -1,4 +1,4 @@
-import time, os, subprocess,sys, bpy
+import time, os, subprocess,sys
 sys.path.insert(0,"\\")
 
 import JTToolsMethods,JTToolsOptions
@@ -111,9 +111,12 @@ try:
   elif groupmode == 2:
       print("Here is a list of modes available:")
       print ("1 = Call CMD")
+      print ("2 = Call Documents")
       modewanted = int(input("Please enter the number of the mode you wish to enter."))
       if modewanted == 1:
           subprocess.call("cmd.exe")
+      if modewanted == 2:
+          subprocess.call("explorer.exe")
   elif groupmode == 3:
       print("Here is a list of modes available:")
       print ("1 = Colour Flicker")
