@@ -106,6 +106,12 @@ try:
              os.system ("shutdown -h -f")
            elif modewanted == 4:
                subprocess.call("JTTools.py", shell = True)
+  elif groupmode == 3:
+      print("Here is a list of modes available:")
+      print ("1 = Colour Flicker")
+      modewanted = int(input("Please enter the number of the mode you want to enter."))
+      if modewanted == 1:
+          JTToolsMethods.flicker()
 except(NameError,ValueError,SyntaxError,ImportError,WindowsError):
     print ("Dammit! Something went wrong!")
     time.sleep(5)

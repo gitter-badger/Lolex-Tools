@@ -3,11 +3,15 @@ check = int (0)
 
 print ("Module JTToolsMethods is running, using modules os and time.")
 def flicker():
- count = 0
- while count != 2147483648:
-        count = count +1
-        os.system("color 4a")
-        os.system("color 3b")
+ suretoflash = int(input("Are you sure you wish to continue? 1 (yes) or 0 (no).Please don't continue if you have epilepsy."))
+ if suretoflash == 1:
+    howlongtoflashfor = int(input("How many flashes do you wish to occur?"))
+    currentflashes= int(0)                       
+    while howlongtoflashfor != currentflashes:
+     os.system ("color 4a")
+     os.system ("color f9")
+     currentflashes = currentflashes+1
+
 def logo():
     os.system ("color f9")
     print ("00000000000000000000000000000000000000000   00000000000000000000000")
