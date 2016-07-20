@@ -43,7 +43,6 @@ while repeat == int(1):
  print ("7 = Colour Flickr")
  print ("8 = Call CMD")
  print ("9 = Call Documents")
-
  print ("10 = Call A Python Shell")
  print ("11 = Call Task Manager")
  print ("12 = Create folders in the same directory as this script.")
@@ -79,7 +78,7 @@ while repeat == int(1):
      time.sleep (waittime*60)
      os.system ("shutdown -h -f")
  if modewanted == 5:
-  shutdown = int(input("Please enter 1 or 0 (no) to confirm hibernate."))
+  shutdown = int(input("Please enter 1 or 0 (no) to confirm shutdown."))
   if shutdown == 1:
      waittime =int(input("How long, in minutes, do you wish to wait?"))
      time.sleep (waittime*60)
