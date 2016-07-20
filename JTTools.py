@@ -112,11 +112,14 @@ try:
       print("Here is a list of modes available:")
       print ("1 = Call CMD")
       print ("2 = Call Documents")
+      print ("3 = Call Task Manager")
       modewanted = int(input("Please enter the number of the mode you wish to enter."))
       if modewanted == 1:
           subprocess.call("cmd.exe")
       if modewanted == 2:
           subprocess.call("explorer.exe")
+      if modewanted == 3:
+          subprocess.call("taskmgr.exe")
   elif groupmode == 3:
       print("Here is a list of modes available:")
       print ("1 = Colour Flicker")
