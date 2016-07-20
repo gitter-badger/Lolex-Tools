@@ -1,10 +1,10 @@
 import time, os, subprocess,sys, bpy
 sys.path.insert(0,"\\")
-os.console.font ("Segoe UI")
+
 import JTToolsMethods,JTToolsOptions
 JTToolsMethods.logo()
 
-bpy.context.space_data.font_size = 17
+
 
 local =time.asctime( time.localtime(time.time()) )
 with open("JT Tools Log File.txt", "a") as f: f.write(local)
