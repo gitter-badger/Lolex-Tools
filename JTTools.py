@@ -1,8 +1,10 @@
-import time, os, subprocess,sys
+import time, os, subprocess,sys, bpy
 sys.path.insert(0,"\\")
-line = 4
+os.console.font ("Segoe UI")
 import JTToolsMethods,JTToolsOptions
 JTToolsMethods.logo()
+
+bpy.context.space_data.font_size = 17
 
 local =time.asctime( time.localtime(time.time()) )
 with open("JT Tools Log File.txt", "a") as f: f.write(local)
@@ -106,6 +108,12 @@ try:
              os.system ("shutdown -h -f")
            elif modewanted == 4:
                subprocess.call("JTTools.py", shell = True)
+  elif groupmode == 2:
+      print("Here is a list of modes available:")
+      print ("1 = Call CMD")
+      modewanted = int(input("Please enter the number of the mode you wish to enter."))
+      if modewanted == 1:
+          subprocess.call("cmd.exe")
   elif groupmode == 3:
       print("Here is a list of modes available:")
       print ("1 = Colour Flicker")
