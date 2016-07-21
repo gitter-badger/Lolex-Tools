@@ -23,18 +23,24 @@ try:
      with open ("JT Tools Log File.txt","a") as f: f.write("    JT Tools: User has proved they can read and aren't a robot.\n")  
  while repeat == int(1):
   if JTToolsOptions.Options.useusername == True:
-       usernameenter = input("Please enter your username in brackets and speech marks.")
-       while str(usernameenter) != JTToolsOptions.Options.username1 and  str(usernameenter) != JTToolsOptions.Options.username2 or str(usernameenter) == False:
+      if JTToolsOptions.Options.idle == False:
+       usernameenter = input("Please enter your username enclosed in brackets and speech marks.")
+      else:
+          usernameenter = input("Please enter your username.")
+      while str(usernameenter) != JTToolsOptions.Options.username1 and  str(usernameenter) != JTToolsOptions.Options.username2 or str(usernameenter) == False:
            print ("Sorry: you inputted an invalid username.")
-           usernameenter = input("Please enter your username.")
-       if usernameenter == JTToolsOptions.Options.username1:
+           if JTToolsOptions.Options.idle == True:
+            usernameenter = input("Please enter your username.")
+           else:
+            usernameenter = input("Please enter your username enclosed in brackets and speech marks.")
+      if usernameenter == JTToolsOptions.Options.username1:
             username = JTToolsOptions.Options.username1
             local = time.asctime(time.localtime(time.time()))
             with open ("JT Tools Log File.txt","a") as f: f.write(local)
             with open ("JT Tools Log File.txt","a") as f: f.write("    JT Tools: User logged in with username:")
             with open ("JT Tools Log File.txt","a") as f: f.write(username)
             with open ("JT Tools Log File.txt","a") as f: f.write("\n")
-       if usernameenter == JTToolsOptions.Options.username2:
+      if usernameenter == JTToolsOptions.Options.username2:
         username = JTToolsOptions.Options.username2
         local =time.asctime( time.localtime(time.time()) )
         with open ("JT Tools Log File.txt","a") as f: f.write (local)
