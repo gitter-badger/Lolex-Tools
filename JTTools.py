@@ -11,7 +11,6 @@ print ("Please wait two seconds...")
 time.sleep (2)
 vanish = int(0)
 try:
- line = 17
  repeat = int(input("Please enter 1 to confirm you are not a robot."))
  if repeat != 1:
   local =time.asctime( time.localtime(time.time()) )
@@ -28,18 +27,20 @@ try:
        while str(usernameenter) != JTToolsOptions.Options.username1 and  str(usernameenter) != JTToolsOptions.Options.username2 or str(usernameenter) == False:
            print ("Sorry: you inputted an invalid username.")
            usernameenter = input("Please enter your username.")
-           if usernameenter == JTToolsOptions.Options.username1:
+       if usernameenter == JTToolsOptions.Options.username1:
             username = JTToolsOptions.Options.username1
             local = time.asctime(time.localtime(time.time()))
             with open ("JT Tools Log File.txt","a") as f: f.write(local)
             with open ("JT Tools Log File.txt","a") as f: f.write("    JT Tools: User logged in with username:")
-            with open ("JT Tools Log File.txt","a") as f: f.write(username,"\n")
+            with open ("JT Tools Log File.txt","a") as f: f.write(username)
+            with open ("JT Tools Log File.txt","a") as f: f.write("\n")
        if usernameenter == JTToolsOptions.Options.username2:
         username = JTToolsOptions.Options.username2
         local =time.asctime( time.localtime(time.time()) )
         with open ("JT Tools Log File.txt","a") as f: f.write (local)
         with open ("JT Tools Log File.txt","a") as f: f.write("    JT Tools: User logged in with username:")
-        with open ("JT Tools Log File.txt","a") as f: f.write(username,"\n")
+        with open ("JT Tools Log File.txt","a") as f: f.write(username)
+        with open ("JT Tools Log File.txt","a") as f: f.write("\n")
        
   if JTToolsOptions.Options.pin == True:
     vanish = 0
