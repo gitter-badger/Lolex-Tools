@@ -1,3 +1,17 @@
+try:
+ import sys
+ sys.path.insert(0,"\\")
+ import JTToolsOptions
+except(ImportError):
+ try:
+  import JTToolsInstaller
+ except(ImportError):
+     print ("JT Tools Options and Installer are missing. Please go to github.com/monkeyboy2805/PixelJitterTools")
+     import time
+     time.sleep(5)
+     exit(None)
+    
+ 
 import time, os, subprocess,sys
 sys.path.insert(0,"\\")
 import JTToolsMethods,JTToolsOptions
