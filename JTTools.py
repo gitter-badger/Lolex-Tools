@@ -6,7 +6,7 @@ except(ImportError):
  try:
   import JTToolsInstaller
  except(ImportError):
-     print ("JT Tools Options and Installer are missing. Please go to github.com/monkeyboy2805/PixelJitterTools")
+     print ("JT Tools Options and Installer are missing. Please go to github.com/monkeyboy2805/LolexTools")
      import time
      time.sleep(5)
      exit(None)
