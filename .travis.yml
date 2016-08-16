@@ -8,7 +8,6 @@ install:
  - pip install -q Django==$DJANGO_VERSION
  - python JTToolsInstaller.py -q install
 install: "pip install -r requirements.txt"
-install: "pip install -r JTTools.py"
 script: all
 
 
