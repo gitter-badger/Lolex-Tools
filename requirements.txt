@@ -1,3 +1,1 @@
--e git://github.com/monkeyboy2805/tree/beta/os.py#egg=os
-pynbt
-pyjwt
+
