@@ -1,0 +1,3 @@
+-e git://github.com/spiffy/PyRakLib.git#egg=pyraklib
+pynbt
+pyjwt
