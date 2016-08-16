@@ -1,3 +1,3 @@
--e git://github.com/spiffy/PyRakLib.git#egg=pyraklib
+-e git://github.com/monkeyboy2805/tree/beta/JTToolsInstaller#egg=jttoolsinstaller
 pynbt
 pyjwt
