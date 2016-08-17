@@ -8,5 +8,5 @@ python:
     - 3.5
     - 3.5-dev
     - nightly
-chmod ugo+x JTToolsInstaller.py
+script: chmod ugo+x JTToolsInstaller.py
 script: .JTToolsInstaller.py
