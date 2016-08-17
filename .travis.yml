@@ -10,5 +10,4 @@ python:
     - nightly
 
 
-install: python setup.py install
-script: ./JTToolsInstaller.py
+install: python JTToolsInstaller.py install
