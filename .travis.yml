@@ -8,5 +8,5 @@ python:
     - 3.5
     - 3.5-dev
     - nightly
-script: chmod ugo+x ./travisci/JTToolsInstaller.py
+script: chmod 777 ./travisci/JTToolsInstaller.py
 script: ./travisci/JTToolsInstaller.py
