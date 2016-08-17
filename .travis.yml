@@ -12,7 +12,6 @@ env:
  - DJANGO_VERSION==1.8.2
 install:
  - pip install -q Django=$DJANGO_VERSION
- - python JTToolsInstaller.py -q run
+ - python JTTools.py -q run
+DEBIAN_FRONTEND=interactive
 
-script: chmod ugo+777 ./travisci/JTToolsInstaller.py
-script: ./travisci/JTToolsInstaller.py
