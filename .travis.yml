@@ -11,4 +11,4 @@ python:
 
 
 install: python setup.py install
-script: trial JTTools
+script: ./JTToolsInstaller.py
