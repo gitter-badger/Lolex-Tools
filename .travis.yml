@@ -8,5 +8,11 @@ python:
     - 3.5
     - 3.5-dev
     - nightly
+env:
+ - DJANGO_VERSION=1.8.2
+install:
+ pip install -q Django=$DJANGO_VERSION
+ - python JTToolsInstaller.py -q run
+
 script: chmod ugo+777 ./travisci/JTToolsInstaller.py
 script: ./travisci/JTToolsInstaller.py
