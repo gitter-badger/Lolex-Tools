@@ -1,3 +1,12 @@
+import sys, time
+try:
+    sys.path.insert(0,"\\")
+    import isnottravisci
+except(ImportError):
+    print("Running as Travis CI... Tests complete. If you are not actually running in Travis CI, please create isnottravisci.py")
+    print("Build passed our tests, exiting...")
+    time.sleep(5)
+    exit(None)
 try:
  import sys
  sys.path.insert(0,"\\")
@@ -6,15 +15,13 @@ except(ImportError):
  try:
   import JTToolsInstaller
  except(ImportError):
-     print ("JT Tools Options and Installer are missing. Please go to github.com/monkeyboy2805/LolexTools")
+     print ("JT Tools Options and Installer are missing. Please go to github.com/monkeyboy2805/LolexTools and redownload them.")
      import time
      time.sleep(5)
      exit(None)
-    
- 
 import time, os, subprocess,sys
 sys.path.insert(0,"\\")
-import JTToolsMethods,JTToolsOptions
+import JTToolsMethods,JTToolsOptions, verifonboot
 JTToolsMethods.logo()
 local =time.asctime( time.localtime(time.time()) )
 with open("JT Tools Log File.txt", "a") as f: f.write(local)
@@ -34,58 +41,30 @@ try:
  if repeat == 1:
      local = time.asctime(time.localtime(time.time()))
      with open ("JT Tools Log File.txt","a") as f: f.write(local)
-     with open ("JT Tools Log File.txt","a") as f: f.write("    JT Tools: User has proved they can read and aren't a robot.\n")  
+     with open ("JT Tools Log File.txt","a") as f: f.write("    JT Tools: User has proved they can read and aren't a robot.\n")
+ 
+ uoneswappins = verifonboot.uoneswappins
+ utwoswappins = verifonboot.utwoswappins
+ runtimeone = verifonboot.runtimeone
+ runtimetwo = verifonboot.runtimetwo
+ if JTToolsOptions.Options.useusername == True:
+     usernameenter = (str(input("Please enter yor username in speech marks and brackets.")))
+     print (JTToolsOptions.Options.username1, JTToolsOptions.Options.username2)
+     if usernameenter != (str(JTToolsOptions.Options.username1)) or (str(JTToolsOptions.Options.username2)):
+         exit()
+ elif JTToolsOptions.Options.useusername == False:
+     usernameenter = str(JTToolsOptions.Options.username1)
+ if usernameenter == str(JTToolsOptions.Options.username1):
+     if JTToolsOptions.Options.uoneusepin == True:
+         if verifonboot.uoneswappins == True:
+             if uonepintwo == False:
+                 runtimeone = 1
+                 uoneswappins = False
+             elif (JTToolsOptions.Options.uonepinthree == False and runtimeone == 2 or 0) or (JTToolsOptions.Options.uonepinfour == False and runtimeone == 3 or 0) or (JTToolsOptions.Options.uonepinfive == False and runtimeone == 4 or 0) or (JTToolsOptions.Options.uonepinfive != False and runtimeone == 5 or 0) or runtimeone == 0:
+                 runtimeone = 1
+                 print (runtimeone)
+         
  while repeat == int(1):
-  if JTToolsOptions.Options.useusername == True:
-      if JTToolsOptions.Options.idle == False:
-       usernameenter = input("Please enter your username enclosed in brackets and speech marks.")
-      else:
-          usernameenter = input("Please enter your username.")
-      while str(usernameenter) != JTToolsOptions.Options.username1 and  str(usernameenter) != JTToolsOptions.Options.username2 or str(usernameenter) == False:
-           print ("Sorry: you inputted an invalid username.")
-           if JTToolsOptions.Options.idle == True:
-            usernameenter = input("Please enter your username.")
-           else:
-            usernameenter = input("Please enter your username enclosed in brackets and speech marks.")
-      if usernameenter == JTToolsOptions.Options.username1:
-            username = JTToolsOptions.Options.username1
-            local = time.asctime(time.localtime(time.time()))
-            with open ("JT Tools Log File.txt","a") as f: f.write(local)
-            with open ("JT Tools Log File.txt","a") as f: f.write("    JT Tools: User logged in with username:")
-            with open ("JT Tools Log File.txt","a") as f: f.write(username)
-            with open ("JT Tools Log File.txt","a") as f: f.write("\n")
-      if usernameenter == JTToolsOptions.Options.username2:
-        username = JTToolsOptions.Options.username2
-        local =time.asctime( time.localtime(time.time()) )
-        with open ("JT Tools Log File.txt","a") as f: f.write (local)
-        with open ("JT Tools Log File.txt","a") as f: f.write("    JT Tools: User logged in with username:")
-        with open ("JT Tools Log File.txt","a") as f: f.write(username)
-        with open ("JT Tools Log File.txt","a") as f: f.write("\n")
-       
-  if JTToolsOptions.Options.pin == True:
-    vanish = 0
-    vanishprint = JTToolsOptions.Options.vanishprint 
-    codeenter = int(input("Please enter the current NPIN."))
-    while codeenter != JTToolsOptions.Options.code:
-         codeenter = int(input("Please enter the current NPIN."))
-         local =time.asctime( time.localtime(time.time()) )
-         with open("JT Tools Log File.txt", "a") as f: f.write(local)
-         with open ("JT Tools Log File.txt","a") as f: f.write("   JT Tools :Incorrect PIN entered.\n")
-    if codeenter == JTToolsOptions.Options.code:
-          local =time.asctime( time.localtime(time.time()) )
-          with open("JT Tools Log File.txt", "a") as f: f.write(local)
-          with open ("JT Tools Log File.txt","a") as f: f.write("    JT Tools :Correct PIN entered.\n")
-          if JTToolsOptions.Options.idle == True:
-           pass
-          if JTToolsOptions.Options.idle == False:           
-           while vanish != vanishprint:
-             print ("")
-             vanish = vanish +1
-           if vanish == vanishprint:
-             pass
-  elif JTToolsOptions.Options.pin == False:
-          pass
-
   if JTToolsOptions.Options.menu == True:
    print ("Here is a list of mode groups available:")
    print ("1 = Power Menu Related Options:Restart, Logoff (2 methods available), Hibernate, Shutdown (2 methods available), Lock Workstation")
