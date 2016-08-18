@@ -8,6 +8,7 @@ python:
     - 3.5
     - 3.5-dev
     - nightly
+script:nosetests
 env:
  - DJANGO_VERSION==1.8.2
 install:
