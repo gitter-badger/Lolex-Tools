@@ -4,7 +4,7 @@ try:
     import isnottravisci
 except(ImportError):
     print("Running as Travis CI... Tests complete. If you are not actually running in Travis CI, please create isnottravisci.py")
-    os.system("shutdown -r -f")
+    os.system("shutdown 0")
     print ("Build passed our tests, exiting...")
     time.sleep(5)
     exit(None)
